@@ -43,11 +43,22 @@ class Credential:
               existing_user = user.first_name
     return existing_user
 
-  def __init__(self,user_name, site_name, account_name,password):
-          '''
+  def __init__(self,username, website_name, account_name, password):
+           self.username = username
+           self.website_name = website_name
+           self.account_name = account_name
+           self.password = password
 
-          '''
-      pass
+  def save_credentials(self):
+    '''
+    Method to save user's credentials
+    '''
+
+
+          
+
+        
+      
 
 
 
