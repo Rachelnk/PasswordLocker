@@ -54,6 +54,33 @@ class Credential:
               Method to save user's credentials
               '''
               Credential.credentials_list.append(self)
+        
+        def generate_password(password_size = 8):
+                '''
+                Method to generate a random password string with 8 characters, digits and special characters.
+
+                '''              
+                password_chars = string.ascii_uppercase + string.ascii_lowercase + string.digits + "~!@#$%^&*"
+                return''.join(random.choice(password_chars ) for i in range(password_size))
+        @classmethod
+        def display_credentials(cls, user_name):
+                '''
+                Method that displays the list credentials saved. 
+                '''
+                user_credentials_list= []
+                for credential in cls.credentials_list:
+                        if credential.user_name == user_name:
+                                user_credentials_list.append(credential)
+                return user_credentials_list
+
+
+
+
+        
+
+
+
+
 
 
 
