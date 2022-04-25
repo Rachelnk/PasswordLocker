@@ -36,7 +36,15 @@ class Credential:
     '''
     Function to check if the name and password provided matches those in the users_list.
     '''
-    
+    existing_user = ''
+    # declare  variable of type string
+    for user in User.users_list:
+            if (user.firstname == first_name and user.password == password):
+              existing_user = user.first_name
+              
+
+
+
 
 
 
