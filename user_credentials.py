@@ -41,7 +41,14 @@ class Credential:
     for user in User.users_list:
             if (user.firstname == first_name and user.password == password):
               existing_user = user.first_name
-              
+    return existing_user
+
+  def __init__(self,user_name, site_name, account_name,password):
+          '''
+
+          '''
+      pass
+
 
 
 
