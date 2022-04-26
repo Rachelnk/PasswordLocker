@@ -33,10 +33,14 @@ def generate_password():
 
 
 def create_new_credential(user_name,website_name,account_name,password):
-	'''
-	A function that creates a new credential for a given user account.
-	'''
-	new_credential=Credential(user_name,website_name,account_name,password)
-	return new_credential
+        '''
+        A function that creates a new credential for a given user account.
+        '''
+        new_credential=Credential(user_name,website_name,account_name,password)
+        return new_credential
+def save_credentials(credentials):
+        '''
+        A function that saves a newly created credential for the user
+        '''
 
 
