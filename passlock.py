@@ -98,9 +98,17 @@ def main():
                                         short_code = input('Enter a choice: ').lower().strip()
                                         print("-"*60)
                                         if short_code == 'ex':
+                                                #user wants to exit
                                                 print("")
                                                 print(f'Goodbye {username}')
                                                 break
+                                        elif short_code == 'cc':
+                                                #user wants to create a credenetial
+                                                print ('')
+                                                print('Enter your credential details:')
+                                                site_name = input('Enter the site\'s name-').strip()
+                                                account_name = input('Enter your account\'s name -').strip()
+
 
 
 
