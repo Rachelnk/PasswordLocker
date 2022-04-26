@@ -49,10 +49,24 @@ def display_usercredentials(user_name):
         '''
         return Credential.display_credentials(user_name)
 def delete_credential(credentials):
-    """
-    A function that deletes a credential from the credentials list
-    """
-    credentials.delete_credentials()
+        """
+        A function that deletes a credential from the credentials list.
+        """
+        credentials.delete_credentials()
+def copy_credential(site_name):
+        '''
+        A function that copies credentials details to the clipboard
+        '''
+        return Credential.copy_credential(site_name)
+def main():
+        print('')
+        print('Hello there! Welcome to your Accounts password store. ')
+        while True:
+                print('')
+                print("-"*60)
+                print('Use these short codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
+                short_code = input('Enter a short code: ').lower().strip()
+
 
 
 
