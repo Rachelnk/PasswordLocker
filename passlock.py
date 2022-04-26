@@ -32,11 +32,11 @@ def generate_password():
 
 
 
-def create_new_credential(user_name,website_name,account_name,password):
+def create_new_credential(user_name,website_name,password):
         '''
         A function that creates a new credential for a given user account.
         '''
-        new_credential=Credential(user_name,website_name,account_name,password)
+        new_credential=Credential(user_name,website_name,password)
         return new_credential
 def save_credentials(credentials):
         '''
@@ -107,11 +107,11 @@ def main():
                                                 print ('')
                                                 print('Enter your credential details:')
                                                 site_name = input('Enter the site\'s name-').strip()
-                                                account_name = input('Enter your account\'s name -').strip()
+                                                
                                                 while True:
                                                         print('')
                                                         print("-"*60)
-                                                        print('Please choose an option for entering a password: \n ep-enter existing password \n gp-generate a password \n ex-exit')
+                                                        print('Please choose an option for creating a password: \n ep-enter existing password \n gp-generate a password \n ex-exit')
                                                         psw_choice = input('Enter an option: ').lower().strip()
                                                         print("-"*60)
                                                         if psw_choice == 'ep':
@@ -127,9 +127,9 @@ def main():
                                                                 break
                                                         else:
                                                                 print('Wrong option entered. Please try again.')
-                                                save_credentials(create_new_credential(username,site_name,account_name,password))
+                                                save_credentials(create_new_credential(username,site_name,password))
                                                 print('')
-                                                print(f'Credentials created: Site name {site_name} - Account name {account_name} - password {password}')
+                                                print(f'Credentials created: Site name {site_name} - password {password}')
                                                 print('')
                                         elif short_code == 'dc':
                                                 print('')
@@ -137,7 +137,7 @@ def main():
                                                         print('Here is a list of all your credentials')
                                                         print('')
                                                         for credential in display_usercredentials(username):
-                                                                print(f'Site Name: {credential.website_name} - Account Name: {credential.account_name} - Password: {credential.password}')
+                                                                print(f'Site Name: {credential.website_name} - Password: {credential.password}')
                                                         print('')
                                                 else:
                                                         print('')
