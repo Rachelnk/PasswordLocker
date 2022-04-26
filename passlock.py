@@ -127,6 +127,28 @@ def main():
                                                                 break
                                                         else:
                                                                 print('Wrong option entered. Please try again.')
+                                                save_credentials(create_new_credential(username,site_name,account_name,password))
+                                                print('')
+                                                print(f'Credentials created: Site name {site_name} - Account name {account_name} - password {password}')
+                                                print('')
+                                        elif short_code == 'dc':
+                                                print('')
+                                                if display_usercredentials(username):
+                                                        print('Here is a list of all your credentials')
+                                                        print('')
+                                                        for credential in display_usercredentials(username):
+                                                                print(f'Site Name: {credential.site_name} - Account Name: {credential.account_name} - Password: {credential.password}')
+                                                        print('')
+                                                else:
+                                                        print('')
+                                                        print("You don't seem to have any credentials saved yet")
+                                                        print('')
+                                                        
+
+
+
+
+
                                 
 
 
