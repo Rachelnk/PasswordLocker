@@ -66,6 +66,18 @@ def main():
                 print("-"*60)
                 print('Use these short codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
                 short_code = input('Enter a short code: ').lower().strip()
+                if short_code == 'ex':
+                        break
+                #break the while loop because the user has choosen to exit.
+                elif short_code == 'ca':
+                        print('')
+                        print("-"*60)			
+                        print('To create a new create, do the following:')
+                        first_name = input('Enter your first name - ').strip()
+			last_name = input('Enter you last name - ').strip()
+                        password = input('Enter your password - ').strip()
+                        
+
 
 
 
