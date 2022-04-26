@@ -94,7 +94,7 @@ def main():
                                 print('')
                                 while True:
                                         print("-"*60)
-                                        print('Enter a short code: \n cc-Create a credential \n dc-Display credentials \n copy-Copy password \n ex-Exit')
+                                        print('Enter a short code: \n cc-Create a credential \n dc-Display credentials \n copy-Copy password \n del-Delte \n ex-Exit')
                                         short_code = input('Enter : ').lower().strip()
                                         print("-"*60)
                                         if short_code == 'ex':

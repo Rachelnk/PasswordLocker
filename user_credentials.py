@@ -23,6 +23,12 @@ class User:
           '''
           
           User.users_list.append(self)
+
+        def delete_user(self):
+                '''
+                Function that deletes a saved account from the list
+                '''
+                User.users_list.remove(self)
           
 class Credential:
         '''
