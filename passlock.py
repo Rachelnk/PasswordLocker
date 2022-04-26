@@ -60,11 +60,11 @@ def copy_credential(site_name):
         return Credential.copy_credential(site_name)
 def main():
         print('')
-        print('Hello there! Welcome to Account\s Password Store. ')
+        print('Hello there! Welcome to your Account\'s password store. ')
         while True:
                 print('')
                 print("-"*60)
-                print('Use these short codes to navigate through the option: \n ca-Create an Account \n li-Log In \n ex-Exit')
+                print('Use these short codes to navigate through application: \n ca-Create an Account \n li-Log In \n ex-Exit')
                 short_code = input('Enter a short code: ').lower().strip()
                 if short_code == 'ex':
                         break
@@ -85,17 +85,17 @@ def main():
                         print("-"*60)
                         print('')
                         print('To login, enter your account details:')
-                        username = input('Enter you first name -').strip()
-                        password = str(input('Enter your password -'))
+                        username = input('Enter you first name: ').strip()
+                        password = str(input('Enter your password: '))
                         user_exists = verify_user(username, password)
-                        if user_exists == username:
+                        if verify_user == user_exists:
                                 print("")
                                 print(f'Login successful. Welcome {username}. Please choose an option to continue.')
                                 print('')
                                 while True:
                                         print("-"*60)
-                                        print('Navigation codes: \n cc-Create a Credential \n dc-Display Credentials \n copy-Copy Password \n ex-Exit')
-                                        short_code = input('Enter a choice: ').lower().strip()
+                                        print('Enter a short code: \n cc-Create a credential \n dc-Display credentials \n copy-Copy password \n ex-Exit')
+                                        short_code = input('Enter : ').lower().strip()
                                         print("-"*60)
                                         if short_code == 'ex':
                                                 #user wants to exit
@@ -152,7 +152,7 @@ def main():
                                                 print('You entered the wrong option. Try again.')
                 else:
                         print('')
-                        print('Oops! Wrong details entered. Try again or create an account.')
+                        print('Oops! Wrong details entered. Try adain or create an account.')
         else:
                 print("-"*60)
                 print('')
