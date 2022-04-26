@@ -86,6 +86,25 @@ class TestCredentials(unittest.TestCase):
                 gmail = Credential('Rachel','Gmail','rachel','pswd123')
                 gmail.save_credentials()
                 self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)
+        def test_copy_credentials(self):
+                '''
+                Test to check if the copy a credential method copies the correct credential
+                '''
+                self.new_credential.save_credentials()
+                twitter = Credential('Nduta','Twitter','rayray','pswd123')
+                twitter.save_credentials()
+                find_credential = None
+                #assign find_credential variable to a null value
+                for credential in Credential.user_credentials_list:
+                                find_credential = Credential.find_by_sitename(credential.website_name)
+                                return pyperclip.copy(find_credential.password)
+                Credential.copy_credential(self.new_credential.site_name)
+                self.assertEqual('pswd123', pyperclip.paste())
+                print(pyperclip.paste())
+if __name__ == '__main__':
+        unittest.main()
+
+
 
 
             
