@@ -60,11 +60,11 @@ def copy_credential(site_name):
         return Credential.copy_credential(site_name)
 def main():
         print('')
-        print('Hello there! Welcome to your Accounts password store. ')
+        print('Hello there! Welcome to Account\s Password Store. ')
         while True:
                 print('')
                 print("-"*60)
-                print('Use these short codes to navigate: \n ca-Create an Account \n li-Log In \n ex-Exit')
+                print('Use these short codes to navigate through the option: \n ca-Create an Account \n li-Log In \n ex-Exit')
                 short_code = input('Enter a short code: ').lower().strip()
                 if short_code == 'ex':
                         break

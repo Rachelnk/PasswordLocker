@@ -18,7 +18,7 @@ class TestUser(unittest.TestCase):
                 '''
                 test_init test case to test if the object is initialized properly
                 '''
-                self.assertEqual(self.new_user.first_name, 'Ray')
+                self.assertEqual(self.new_user.first_name, 'Rachel')
                 self.assertEqual(self.new_user.last_name,'Kiarie')
                 self.assertEqual(self.new_user.password,'pswd123')
         def test_saver_user(self):
@@ -57,8 +57,8 @@ class TestCredentials(unittest.TestCase):
                 '''
                 Test to if check the initialization/creation of credential instances is properly done
                 '''
-                self.assertEqual(self.new_credential.user_name,'Rachel')
-                self.assertEqual(self.new_credential.site_name,'Twitter')
+                self.assertEqual(self.new_credential.username,'Rachel')
+                self.assertEqual(self.new_credential.website_name,'Twitter')
                 self.assertEqual(self.new_credential.account_name,'raykiarie')
                 self.assertEqual(self.new_credential.password,'pswd123')
         def test_save_credentials(self):
@@ -83,9 +83,17 @@ class TestCredentials(unittest.TestCase):
                 self.new_credential.save_credentials()
                 twitter = Credential('Nduta','Twitter','rayray','pswd123')
                 twitter.save_credentials()
-                gmail = Credential('Rachel','Gmail','rachel','pswd123')
-                gmail.save_credentials()
-                self.assertEqual(len(Credential.display_credentials(twitter.user_name)),2)
+                twitter = Credential('Rachel','Gmail','rachel','pswd123')
+                twitter.save_credentials()
+                self.assertEqual(len(Credential.display_credentials(twitter.username)),2)
+        def test_delete(self):
+                '''
+                Function to test if account credentials from credentials_list can be removed
+
+                '''
+                self.new_credential.save_credentials()
+                test_credential = Credential('Nduta', 'Twitter','rayray','pswd123')
+
         def test_copy_credentials(self):
                 '''
                 Test to check if the copy a credential method copies the correct credential
@@ -98,7 +106,7 @@ class TestCredentials(unittest.TestCase):
                 for credential in Credential.user_credentials_list:
                                 find_credential = Credential.find_by_sitename(credential.website_name)
                                 return pyperclip.copy(find_credential.password)
-                Credential.copy_credential(self.new_credential.site_name)
+                Credential.copy_credential(self.new_credential.website_name)
                 self.assertEqual('pswd123', pyperclip.paste())
                 print(pyperclip.paste())
 if __name__ == '__main__':
