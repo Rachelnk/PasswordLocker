@@ -85,7 +85,7 @@ def main():
                         print("-"*60)
                         print('')
                         print('To login, enter your account details:')
-                        username = input('Enter you first name -').script()
+                        username = input('Enter you first name -').strip()
                         password = str(input('Enter your password -'))
                         user_exists = verify_user(username, password)
                         if user_exists == username:
@@ -137,7 +137,7 @@ def main():
                                                         print('Here is a list of all your credentials')
                                                         print('')
                                                         for credential in display_usercredentials(username):
-                                                                print(f'Site Name: {credential.site_name} - Account Name: {credential.account_name} - Password: {credential.password}')
+                                                                print(f'Site Name: {credential.website_name} - Account Name: {credential.account_name} - Password: {credential.password}')
                                                         print('')
                                                 else:
                                                         print('')
@@ -152,7 +152,7 @@ def main():
                                                 print('You entered the wrong option. Try again.')
                 else:
                         print('')
-                        print('Oops! Wrong details entered. Try adain or create an account.')
+                        print('Oops! Wrong details entered. Try again or create an account.')
         else:
                 print("-"*60)
                 print('')

@@ -39,7 +39,7 @@ class Credential:
                 existing_user = ''
                 # declare  variable of type string
                 for user in User.users_list:
-                        if (user.firstname == first_name and user.password == password):
+                        if (user.first_name == first_name and user.password == password):
                           existing_user = user.first_name
                 return existing_user
 
@@ -73,7 +73,7 @@ class Credential:
                 '''
                 user_credentials_list= []
                 for credential in cls.credentials_list:
-                        if credential.user_name == user_name:
+                        if credential.username == user_name:
                                 user_credentials_list.append(credential)
                 return user_credentials_list
         @classmethod
