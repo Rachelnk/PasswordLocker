@@ -69,6 +69,13 @@ class TestCredentials(unittest.TestCase):
                 instagram = Credential("Nduta", "Instagram","ray","pswd123")
                 instagram.save_credentials()
                 self.assertEqual(len(Credential.credentials_list),2)
+        def tearDown(self):
+                '''
+                Function to clear the credentias_list after every test
+                '''
+                Credential.credentials_list = []
+                User.users_list = []
+            
 
 
 
