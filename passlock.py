@@ -45,8 +45,15 @@ def save_credentials(credentials):
         Credential.save_credentials(credentials)
 def display_usercredentials(user_name):
         '''
-        Function to display credentials saved by a user
+        A function that displays credentials saved by a user.
         '''
         return Credential.display_credentials(user_name)
+def delete_credential(credentials):
+    """
+    A function that deletes a credential from the credentials list
+    """
+    credentials.delete_credentials()
+
+
 
 
