@@ -76,7 +76,40 @@ def main():
                         first_name = input('Enter your first name - ').strip()
                         last_name = input ('Enter your last name -').strip()
                         password = input ('Enter your password -').strip()
+                        #strip() to remove whitespaces at the beginning and the end of the string.
+                        save_newuser(create_user(first_name,last_name,password))
+                        print("")
+                        print(f'New account created for: {first_name} {last_name} using password: {password}')
+                elif short_code == 'li':
+                        #login
+                        print("-"*60)
+                        print('')
+                        print('To login, enter your account details:')
+                        username = input('Enter you first name -').script()
+                        password = str(input('Enter your password -'))
+                        user_exists = verify_user(username, password)
+                        if user_exists == username:
+                                print("")
+                                print(f'Login successful. Welcome {username}. Please choose an option to continue.')
+                                print('')
+                                while True:
+                                        print("-"*60)
+                                        print('Navigation codes: \n cc-Create a Credential \n dc-Display Credentials \n copy-Copy Password \n ex-Exit')
+                                        short_code = input('Enter a choice: ').lower().strip()
+                                        print("-"*60)
+
+
+
+
+                                                        
+                       
+
                         
+
+
+
+
+
                         
                         
 
