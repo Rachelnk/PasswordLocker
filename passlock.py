@@ -97,6 +97,11 @@ def main():
                                         print('Navigation codes: \n cc-Create a Credential \n dc-Display Credentials \n copy-Copy Password \n ex-Exit')
                                         short_code = input('Enter a choice: ').lower().strip()
                                         print("-"*60)
+                                        if short_code == 'ex':
+                                                print("")
+                                                print(f'Goodbye {username}')
+                                                break
+
 
 
 
