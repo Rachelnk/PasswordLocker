@@ -74,8 +74,10 @@ def main():
                         print("-"*60)			
                         print('To create a new create, do the following:')
                         first_name = input('Enter your first name - ').strip()
-			last_name = input('Enter you last name - ').strip()
-                        password = input('Enter your password - ').strip()
+                        last_name = input ('Enter your last name -').strip()
+                        password = input ('Enter your password -').strip()
+                        
+                        
                         
 
 
