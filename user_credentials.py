@@ -46,7 +46,6 @@ class Credential:
         def __init__(self,username, website_name, password):
                 self.username = username
                 self.website_name = website_name
-               
                 self.password = password
 
         def save_credentials(self):

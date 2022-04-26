@@ -52,21 +52,21 @@ class TestCredentials(unittest.TestCase):
                 '''
                 Function to create a user's credentials before each test
                 '''
-                self.new_credential = Credential('Rachel', 'Twitter','raykiarie','pswd123')
+                self.new_credential = Credential('Rachel', 'Twitter','pswd123')
         def test__init__(self):
                 '''
                 Test to if check the initialization/creation of credential instances is properly done
                 '''
                 self.assertEqual(self.new_credential.username,'Rachel')
                 self.assertEqual(self.new_credential.website_name,'Twitter')
-                self.assertEqual(self.new_credential.account_name,'raykiarie')
+                
                 self.assertEqual(self.new_credential.password,'pswd123')
         def test_save_credentials(self):
                 '''
                 Function to check if the new credential info is saved into the credentials list
                 '''
                 self.new_credential.save_credentials()
-                instagram = Credential("Nduta", "Instagram","ray","pswd123")
+                instagram = Credential("Nduta", "Instagram","pswd123")
                 instagram.save_credentials()
                 self.assertEqual(len(Credential.credentials_list),2)
         def tearDown(self):
@@ -76,30 +76,38 @@ class TestCredentials(unittest.TestCase):
                 Credential.credentials_list = []
                 User.users_list = []
 
-        def test_display_credentials(self):
-                '''
-                Test to check if the display_credentials method, displays the correct credentials.
-                '''
-                self.new_credential.save_credentials()
-                twitter = Credential('Nduta','Twitter','rayray','pswd123')
-                twitter.save_credentials()
-                twitter = Credential('Rachel','Gmail','rachel','pswd123')
-                twitter.save_credentials()
-                self.assertEqual(len(Credential.display_credentials(twitter.username)),2)
+        # def test_display_credentials(self):
+        #         '''
+        #         Test to check if the display_credentials method, displays the correct credentials.
+        #         '''
+        #         self.new_credential.save_credentials()
+        #         twitter = Credential('Nduta','Twitter','pswd123')
+        #         twitter.save_credentials()
+        #         gmail = Credential('Rachel','gmail','psw234')
+        #         gmail.save_credentials()
+                
+        #         self.assertEqual(len(Credential.display_credentials(twitter.username,gmail.username)),2)
+        
         def test_delete(self):
                 '''
                 Function to test if account credentials from credentials_list can be removed
 
                 '''
                 self.new_credential.save_credentials()
-                test_credential = Credential('Nduta', 'Twitter','rayray','pswd123')
+                test_credential = Credential('Nduta', 'Twitter','pswd123')
+                test_credential.save_credentials()
+
+                self.new_credential.delete_credentials()
+                self.assertEqual(len(Credential.credentials_list),1)
+
+
 
         def test_copy_credentials(self):
                 '''
                 Test to check if the copy a credential method copies the correct credential
                 '''
                 self.new_credential.save_credentials()
-                twitter = Credential('Nduta','Twitter','rayray','pswd123')
+                twitter = Credential('Nduta','Twitter','pswd123')
                 twitter.save_credentials()
                 find_credential = None
                 #assign find_credential variable to a null value
