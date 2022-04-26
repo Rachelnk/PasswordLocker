@@ -53,6 +53,11 @@ def delete_credential(credentials):
         A function that deletes a credential from the credentials list.
         """
         credentials.delete_credentials()
+def find_credentials (website_name):
+        '''
+        Function that finds credentials by an account name and returns the credentials belonging to that account
+         '''
+        return Credential.find_by_sitename(website_name)
 def copy_credential(site_name):
         '''
         A function that copies credentials details to the clipboard
@@ -94,7 +99,7 @@ def main():
                                 print('')
                                 while True:
                                         print("-"*60)
-                                        print('Enter a short code: \n cc-Create a credential \n dc-Display credentials \n copy-Copy password \n del-Delte \n ex-Exit')
+                                        print('Enter a short code: \n cc-Create a credential \n dc-Display credentials \n copy-Copy password \n del-Delte \n fc-Find credential \n ex-Exit')
                                         short_code = input('Enter : ').lower().strip()
                                         print("-"*60)
                                         if short_code == 'ex':
@@ -143,6 +148,24 @@ def main():
                                                         print('')
                                                         print("You don't seem to have any credentials saved yet")
                                                         print('')
+                                        elif short_code == 'fc':
+                                                print ("Enter an account name you want to search for")
+                                                search_name = input().lower()
+                                                if find_credentials(search_name):
+                                                        search_credential = find_credentials(search_name)
+                                                        print(f"Account Name : {search_credential.website_name}")
+                                                        print("-"*60)
+                                                        print(f"User Name: {search_credential.username} Password :{search_credential.password}")
+                                                        print("-"*60)
+                                                else:
+                                                        print("That credential does not exist.")
+                                                        print('\n')
+
+
+
+
+                                                
+
                                         elif short_code == 'copy':
                                                 print('')
                                                 site_chosen = input('Enter the site name for the credential password to copy: ')
