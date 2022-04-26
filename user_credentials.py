@@ -54,7 +54,11 @@ class Credential:
               Method to save user's credentials
               '''
               Credential.credentials_list.append(self)
-        
+        def delete_credentials(self):
+              '''
+              Method that deletes an account credentials from the credentials_list
+              '''
+              Credential.credentials_list.remove(self)
         def generate_password(password_size = 8):
                 '''
                 Method to generate a random password string with 8 characters, digits and special characters.
@@ -74,13 +78,20 @@ class Credential:
                 return user_credentials_list
         @classmethod
         def find_by_sitename(cls, website_name):
-          '''
-          Method that takes in a site_name and returns a credential that matches that site_name.
-          
-          '''
-          for credential in cls.credentials_list:
-                  if credential.website_name == website_name:
-                          return credential
+                '''
+                Method that takes in a site_name and returns a credential that matches that site_name.
+                
+                '''
+                for credential in cls.credentials_list:
+                        if credential.website_name == website_name:
+                                return credential
+        @classmethod
+        def copy_credential(cls,site_name):
+                '''
+                Method that copies a credential's info after the credential's site name is entered
+                '''
+                find_credential = Credential.find_by_sitename(site_name)
+                return pyperclip.copy(find_credential.password)
 
 
 
