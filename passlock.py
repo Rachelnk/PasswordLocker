@@ -5,14 +5,14 @@ from user_credentials import User, Credential
 
 def create_user(fname,lname,password):
         '''
-        A function to create a new user account
+        A function that create a new user account
         '''
         new_user = User(fname,lname,password)
         return new_user
 
 def save_newuser(user):
         '''
-        A function to save a new user account
+        A function that save a new user account
         '''
         User.save_newuser(user)
 
@@ -25,9 +25,18 @@ def verify_user(first_name,password):
 
 def generate_password():
         '''
-        A function to generate a password automatically
+        A function that generate a password automatically
         '''
         generate_userpassword = Credential.generate_password()
         return generate_userpassword
+
+
+
+def create_new_credential(user_name,website_name,account_name,password):
+	'''
+	A function that creates a new credential for a given user account.
+	'''
+	new_credential=Credential(user_name,website_name,account_name,password)
+	return new_credential
 
 
