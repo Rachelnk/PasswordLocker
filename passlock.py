@@ -58,7 +58,7 @@ def find_credential(account):
         """
         Function that finds a Credentials by an account name and returns the Credentials that belong to that account
         """
-        return Credential.find_credential(account)
+        return Credential.find_credentials(account)
 def copy_credential(site_name):
         '''
         A function that copies credentials details to the clipboard
@@ -73,6 +73,7 @@ def main():
                 print('Use these short codes to navigate through application: \n ca-Create an Account \n li-Log In \n ex-Exit')
                 short_code = input('Enter a short code: ').lower().strip()
                 if short_code == 'ex':
+                        print('Sad to see you go.')
                         break
                 #break the while loop because the user has choosen to exit.
                 elif short_code == 'ca':
@@ -104,7 +105,7 @@ def main():
                         #         break
                                 while True:
                                         print("-"*60)
-                                        print('Enter a short code: \n cc-Create a credential \n dc-Display credentials \n copy-Copy password \n ex-Exit')
+                                        print('Enter a short code: \n cc-Create a credential \n dc-Display credentials \n fc-Find credential \n del-Delete \n  copy-Copy password \n ex-Exit')
                                         short_code = input('Enter short code: ').lower().strip()
                                         print("-"*60)
                                         if short_code == 'ex':
@@ -121,7 +122,7 @@ def main():
                                                 while True:
                                                         print('')
                                                         print("-"*60)
-                                                        print('Please choose an option for creating a password: \n ep-enter existing password \n gp-generate a password \n fc-Find credential \n del-Delete \n ex-exit')
+                                                        print('Please choose an option for creating a password: \n ep-enter existing password \n gp-generate a password \n ex-exit')
                                                         psw_choice = input('Enter an option: ').lower().strip()
                                                         print("-"*60)
                                                         if psw_choice == 'ep':
@@ -154,7 +155,7 @@ def main():
                                                         print("You don't seem to have any credentials saved yet")
                                                         print('')
                                         elif short_code == 'fc':
-                                                print('Enter the amout name you want to search for')
+                                                print('Enter the account name you want to search for')
                                                 search_name = input().lower()
                                                 if find_credential(search_name):
                                                         search_credential = find_credential(search_name)
@@ -176,7 +177,7 @@ def main():
                                                         print(f"Your stored credentials for : {search_credential.account} successfully deleted.")
                                                         print('\n')
                                                 else:
-                                                        rint("The credential you want to delete does not exist in your store yet")
+                                                        print("The credential you want to delete does not exist in your store yet")
 
 
 
