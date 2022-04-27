@@ -1,6 +1,7 @@
+import pyperclip
 import random
 import string
-import pyperclip
+
 
 global users_list 
 # users list is variable that is accessible throughout the program

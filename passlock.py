@@ -1,9 +1,8 @@
-
 #! /usr/bin/env python3
-import pyperclip
 from user_credentials import User, Credential
+import pyperclip
 
-def create_user(fname,lname,password):
+def create_user (fname,lname,password):
         '''
         A function that create a new user account
         '''
