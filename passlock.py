@@ -48,16 +48,17 @@ def display_usercredentials(user_name):
         A function that displays credentials saved by a user.
         '''
         return Credential.display_credentials(user_name)
+
 def delete_credential(credentials):
         """
         A function that deletes a credential from the credentials list.
         """
         credentials.delete_credentials()
-def find_credentials (website_name):
-        '''
-        Function that finds credentials by an account name and returns the credentials belonging to that account
-         '''
-        return Credential.find_by_sitename(website_name)
+def find_credential(account):
+        """
+        Function that finds a Credentials by an account name and returns the Credentials that belong to that account
+        """
+        return Credential.find_credential(account)
 def copy_credential(site_name):
         '''
         A function that copies credentials details to the clipboard
@@ -77,10 +78,10 @@ def main():
                 elif short_code == 'ca':
                         print('')
                         print("-"*60)			
-                        print('To create a new create, do the following:')
+                        print('Create a new account:')
                         first_name = input('Enter your first name - ').strip()
-                        last_name = input ('Enter your last name -').strip()
-                        password = input ('Enter your password -').strip()
+                        last_name = input ('Enter your last name - ').strip()
+                        password = input ('Enter your password - ').strip()
                         #strip() to remove whitespaces at the beginning and the end of the string.
                         save_newuser(create_user(first_name,last_name,password))
                         print("")
@@ -90,17 +91,21 @@ def main():
                         print("-"*60)
                         print('')
                         print('To login, enter your account details:')
-                        username = input('Enter you first name: ').strip()
-                        password = str(input('Enter your password: '))
+                        username = input('Enter you first name - ').strip()
+                        password = str(input('Enter your password - '))
                         user_exists = verify_user(username, password)
-                        if verify_user == user_exists:
+                        if user_exists == username:
                                 print("")
                                 print(f'Login successful. Welcome {username}. Please choose an option to continue.')
                                 print('')
+
+                        elif user_exists != username or user_exists != password:
+                                print("Username or password is in correct")
+                                break
                                 while True:
                                         print("-"*60)
-                                        print('Enter a short code: \n cc-Create a credential \n dc-Display credentials \n copy-Copy password \n del-Delte \n fc-Find credential \n ex-Exit')
-                                        short_code = input('Enter : ').lower().strip()
+                                        print('Enter a short code: \n cc-Create a credential \n dc-Display credentials \n copy-Copy password \n ex-Exit')
+                                        short_code = input('Enter short code: ').lower().strip()
                                         print("-"*60)
                                         if short_code == 'ex':
                                                 #user wants to exit
@@ -148,25 +153,6 @@ def main():
                                                         print('')
                                                         print("You don't seem to have any credentials saved yet")
                                                         print('')
-                                        elif short_code == 'fc':
-                                                print ("Enter an account name you want to search for")
-                                                search_name = input().lower()
-                                                if find_credentials(search_name):
-                                                        search_credential = find_credentials(search_name)
-                                                        print(f"Account Name : {search_credential.website_name}")
-                                                        print("-"*60)
-                                                        print(f"User Name: {search_credential.username} Password :{search_credential.password}")
-                                                        print("-"*60)
-                                                else:
-                                                        print("That credential does not exist.")
-                                                        print('\n')
-                                        
-
-
-
-
-                                                
-
                                         elif short_code == 'copy':
                                                 print('')
                                                 site_chosen = input('Enter the site name for the credential password to copy: ')

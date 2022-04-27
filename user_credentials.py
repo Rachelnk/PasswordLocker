@@ -64,6 +64,7 @@ class Credential:
               Method that deletes an account credentials from the credentials_list
               '''
               Credential.credentials_list.remove(self)
+
         def generate_password(password_size = 8):
                 '''
                 Method to generate a random password string with 8 characters, digits and special characters.
@@ -82,7 +83,7 @@ class Credential:
                                 user_credentials_list.append(credential)
                 return user_credentials_list
         @classmethod
-        def find_by_sitename(cls, website_name):
+        def find_credentials(cls, website_name):
                 '''
                 Method that takes in a site_name and returns a credential that matches that site_name.
                 
