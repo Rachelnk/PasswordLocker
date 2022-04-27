@@ -164,7 +164,19 @@ def main():
                                                         print(f'User name: {search_credential.username} Password: {search_credential.password}')
                                                         print("-"*60)
                                                 else:
-                                                        print("That Credential does not exist")
+                                                        print("That credential does not exist")
+                                        elif short_code == 'del':
+                                                print("Enter the account name i.e twitter of the credentials you want to delete")
+                                                search_name = input().lower()
+                                                if find_credential(search_name):
+                                                        search_credential = find_credential(search_name)
+                                                        print("-"*60)
+                                                        search_credential.delete_credentials()
+                                                        print('\n')
+                                                        print(f"Your stored credentials for : {search_credential.account} successfully deleted.")
+                                                        print('\n')
+                                                else:
+                                                        rint("The credential you want to delete does not exist in your store yet")
 
 
 
@@ -182,7 +194,7 @@ def main():
         else:
                 print("-"*60)
                 print('')
-                print('Oops. Wrong option entered. Try again.')
+                print('Please enter a valid input to continue')
 
 
 if __name__ == '__main__':
