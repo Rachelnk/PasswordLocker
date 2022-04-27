@@ -159,7 +159,7 @@ def main():
                                                 search_name = input().lower()
                                                 if find_credential(search_name):
                                                         search_credential = find_credential(search_name)
-                                                        print(f"Account Name : {search_credential.account}")
+                                                        print(f"Account Name : {search_credential.website_name}")
                                                         print("-"*60)
 
                                                         print(f'User name: {search_credential.username} Password: {search_credential.password}')
@@ -174,7 +174,7 @@ def main():
                                                         print("-"*60)
                                                         search_credential.delete_credentials()
                                                         print('\n')
-                                                        print(f"Your stored credentials for : {search_credential.account} successfully deleted.")
+                                                        print(f"Your stored credentials for : {search_credential.website_name} successfully deleted.")
                                                         print('\n')
                                                 else:
                                                         print("The credential you want to delete does not exist in your store yet")
