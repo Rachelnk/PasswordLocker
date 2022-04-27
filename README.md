@@ -17,13 +17,14 @@
 
 ### Cloning
 
-* Clone the repository to your local machine. e.g. `$ git clone https://github.com/Rachelnk/PasswordLocker.git`
+* Clone the repository to your local machine. e.g. 
+`$ git clone https://github.com/Rachelnk/PasswordLocker.git`
 * `cd PasswordLocker`
 
 ### Running the Application
 
-*In your terminal
- `$ chmod +x passlock.py`
+* In your terminal
+ `$ chmod +x passlock.py`  
  `$ ./passlock.py`
 ### Testing the Application
 * To the run tests:
