@@ -1,7 +1,7 @@
 # Quotes
 
 ## Description
-##### This application is a python application that is run the terminal that manages login and signup credentials i.e username and password for each account. It also stores the passwords and generates a unique password for a user. The users also have the option to generate new passwords by themselves.
+##### This is a python application that runs in the terminal that manages login and signup credentials i.e username and password for user's account. It also stores the passwords and generates a unique password for a user. The users also have the option to generate new passwords by themselves.
 
 ## Authors
 #### Rachel Kiarie
